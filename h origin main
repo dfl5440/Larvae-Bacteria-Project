@@ -1,0 +1,38 @@
+[33mcommit 3104e152ea497c892a1d613c363707cb09460229[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: Diego <dfl5440@psu.edu>
+Date:   Tue Feb 20 20:47:58 2024 -0500
+
+    Notebook added
+
+[1mdiff --git a/Notebook.qmd b/Notebook.qmd[m
+[1mnew file mode 100644[m
+[1mindex 0000000..2d5d876[m
+[1m--- /dev/null[m
+[1m+++ b/Notebook.qmd[m
+[36m@@ -0,0 +1,26 @@[m
+[32m+[m[32m---[m
+[32m+[m[32mtitle: "Notebook"[m
+[32m+[m[32mformat: html[m
+[32m+[m[32meditor: visual[m
+[32m+[m[32m---[m
+[32m+[m
+[32m+[m[32m## Quarto[m
+[32m+[m
+[32m+[m[32mQuarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.[m
+[32m+[m
+[32m+[m[32m## Running Code[m
+[32m+[m
+[32m+[m[32mWhen you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:[m
+[32m+[m
+[32m+[m[32m```{r}[m
+[32m+[m[32m1 + 1[m
+[32m+[m[32m```[m
+[32m+[m
+[32m+[m[32mYou can add options to executable code like this[m
+[32m+[m
+[32m+[m[32m```{r}[m
+[32m+[m[32m#| echo: false[m
+[32m+[m[32m2 * 2[m
+[32m+[m[32m```[m
+[32m+[m
+[32m+[m[32mThe `echo: false` option disables the printing of code (only output is displayed).[m
