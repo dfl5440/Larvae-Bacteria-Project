@@ -1,0 +1,4 @@
+- source: Notebook.qmd
+  quarto-pub:
+    - id: 847c0c50-783c-4737-9970-c752addf4cbd
+      url: 'https://dfl5440.quarto.pub/genomic-exploration-of-tbp-producing-bacteria-v01'

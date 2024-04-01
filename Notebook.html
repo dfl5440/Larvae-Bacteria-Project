@@ -8,7 +8,7 @@
 
 <meta name="author" content="Diego Lera-Lozano">
 
-<title>Project Notebook</title>
+<title>Genomic Exploration of TBP Producing Bacteria</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -56,13 +56,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#basecalling" id="toc-basecalling" class="nav-link" data-scroll-target="#basecalling">Basecalling</a></li>
   <li><a href="#trimming" id="toc-trimming" class="nav-link" data-scroll-target="#trimming">Trimming</a></li>
   </ul></li>
-  <li><a href="#assembly-generation" id="toc-assembly-generation" class="nav-link" data-scroll-target="#assembly-generation">Assembly Generation</a>
+  <li><a href="#assembly-workflow" id="toc-assembly-workflow" class="nav-link" data-scroll-target="#assembly-workflow">Assembly Workflow</a>
   <ul>
   <li><a href="#k-mer-assembly" id="toc-k-mer-assembly" class="nav-link" data-scroll-target="#k-mer-assembly">K-mer Assembly</a></li>
   <li><a href="#assembly" id="toc-assembly" class="nav-link" data-scroll-target="#assembly">Assembly</a></li>
-  </ul></li>
-  <li><a href="#alignment-polishing-and-circularization" id="toc-alignment-polishing-and-circularization" class="nav-link" data-scroll-target="#alignment-polishing-and-circularization">Alignment, Polishing, and Circularization</a>
-  <ul>
   <li><a href="#alignment-and-polishing" id="toc-alignment-and-polishing" class="nav-link" data-scroll-target="#alignment-and-polishing">Alignment and Polishing</a></li>
   <li><a href="#circularization" id="toc-circularization" class="nav-link" data-scroll-target="#circularization">Circularization</a></li>
   </ul></li>
@@ -100,7 +97,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Project Notebook</h1>
+<h1 class="title">Genomic Exploration of TBP Producing Bacteria</h1>
 </div>
 
 
@@ -257,8 +254,8 @@ date
 </div>
 </section>
 </section>
-<section id="assembly-generation" class="level1">
-<h1>Assembly Generation</h1>
+<section id="assembly-workflow" class="level1">
+<h1>Assembly Workflow</h1>
 <section id="k-mer-assembly" class="level3">
 <h3 class="anchored" data-anchor-id="k-mer-assembly">K-mer Assembly</h3>
 <p>Before we begin putting together an assembly we first had to get an approximate genome length to this we used jellyfish for a K-mer analysis using 25-mers.</p>
@@ -308,29 +305,29 @@ jellyfish histo -h 1000000 -t 10 25mer_out.jf &gt; barcode01.histo
 <table class="table">
 <thead>
 <tr class="header">
-<th>Contig #</th>
+<th>Contig</th>
 <th>length</th>
 <th>COV</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>1</td>
+<td>Contig_1</td>
 <td>4,903,516</td>
 <td>636</td>
 </tr>
 <tr class="even">
-<td>4</td>
+<td>Contig_4</td>
 <td>521,089</td>
 <td>626</td>
 </tr>
 <tr class="odd">
-<td>3</td>
+<td>Contig_3</td>
 <td>467,542</td>
 <td>628</td>
 </tr>
 <tr class="even">
-<td>2</td>
+<td>Contig_2</td>
 <td>6,778</td>
 <td>546</td>
 </tr>
@@ -342,29 +339,29 @@ jellyfish histo -h 1000000 -t 10 25mer_out.jf &gt; barcode01.histo
 <table class="table">
 <thead>
 <tr class="header">
-<th>Contig #</th>
+<th>Contig</th>
 <th>length</th>
 <th>COV</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>1</td>
+<td>Contig_1</td>
 <td>3,527,231</td>
 <td>499</td>
 </tr>
 <tr class="even">
-<td>4</td>
+<td>Contig_4</td>
 <td>1,216,057</td>
 <td>510</td>
 </tr>
 <tr class="odd">
-<td>2</td>
+<td>Contig_2</td>
 <td>928,174</td>
 <td>492</td>
 </tr>
 <tr class="even">
-<td>5</td>
+<td>Contig_5</td>
 <td>20,286</td>
 <td>594</td>
 </tr>
@@ -376,24 +373,24 @@ jellyfish histo -h 1000000 -t 10 25mer_out.jf &gt; barcode01.histo
 <table class="table">
 <thead>
 <tr class="header">
-<th>Contig #</th>
+<th>Contig</th>
 <th>length</th>
 <th>COV</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>2</td>
+<td>Contig_2</td>
 <td>3,160,323</td>
 <td>82</td>
 </tr>
 <tr class="even">
-<td>3</td>
+<td>Contig_3</td>
 <td>1,214,135</td>
 <td>91</td>
 </tr>
 <tr class="odd">
-<td>5</td>
+<td>Contig_5</td>
 <td>42,348</td>
 <td>1150</td>
 </tr>
@@ -422,9 +419,6 @@ export READS=/path/to/barcode01_trimmed100.fastq.gz
 </div>
 </div>
 </section>
-</section>
-<section id="alignment-polishing-and-circularization" class="level1">
-<h1>Alignment, Polishing, and Circularization</h1>
 <section id="alignment-and-polishing" class="level3">
 <h3 class="anchored" data-anchor-id="alignment-and-polishing">Alignment and Polishing</h3>
 <p>Once assemblies were generated we decided to align and polish the assemblies using minimap2 and racon respectfully. We then used bbmap’s stats.sh feature to generate basic assembly information to investigate the effect of minimap2 and racon on our assembly during each alignment and polishing round.</p>
@@ -655,35 +649,35 @@ racon -t $SLURM_NTASKS $READS $PAF $ASSEMBLY &gt; $OUT</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td>1</td>
+<td>Contig_1</td>
 <td>Y*</td>
 <td>-</td>
 <td>Y*</td>
 <td>Y*</td>
 </tr>
 <tr class="even">
-<td>2</td>
+<td>Contig_2</td>
 <td>Y</td>
 <td>-</td>
 <td>N</td>
 <td>N</td>
 </tr>
 <tr class="odd">
-<td>3</td>
+<td>Contig_3</td>
 <td>Y</td>
 <td>-</td>
 <td>Y</td>
 <td>Y</td>
 </tr>
 <tr class="even">
-<td>4</td>
+<td>Contig_4</td>
 <td>Y</td>
 <td>-</td>
 <td>Y</td>
 <td>Y</td>
 </tr>
 <tr class="odd">
-<td>5</td>
+<td>Contig_5</td>
 <td>X</td>
 <td>-</td>
 <td>X</td>
@@ -703,35 +697,35 @@ racon -t $SLURM_NTASKS $READS $PAF $ASSEMBLY &gt; $OUT</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td>1</td>
+<td>Contig_1</td>
 <td>N*</td>
 <td>-</td>
 <td>N*</td>
 <td>N*</td>
 </tr>
 <tr class="even">
-<td>2</td>
+<td>Contig_2</td>
 <td>N</td>
 <td>-</td>
 <td>N</td>
 <td>N</td>
 </tr>
 <tr class="odd">
-<td>3</td>
+<td>Contig_3</td>
 <td>X</td>
 <td>-</td>
 <td>X</td>
 <td>X</td>
 </tr>
 <tr class="even">
-<td>4</td>
+<td>Contig_4</td>
 <td>Y</td>
 <td>-</td>
 <td>Y</td>
 <td>Y</td>
 </tr>
 <tr class="odd">
-<td>5</td>
+<td>Contig_5</td>
 <td>N</td>
 <td>-</td>
 <td>N</td>
@@ -751,35 +745,35 @@ racon -t $SLURM_NTASKS $READS $PAF $ASSEMBLY &gt; $OUT</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td>1</td>
+<td>Contig_1</td>
 <td>X</td>
 <td>-</td>
 <td>X</td>
 <td>X</td>
 </tr>
 <tr class="even">
-<td>2</td>
+<td>Contig_2</td>
 <td>N*</td>
 <td>-</td>
 <td>N*</td>
 <td>N*</td>
 </tr>
 <tr class="odd">
-<td>3</td>
+<td>Contig_3</td>
 <td>N</td>
 <td>-</td>
 <td>N</td>
 <td>N</td>
 </tr>
 <tr class="even">
-<td>4</td>
+<td>Contig_4</td>
 <td>X</td>
 <td>-</td>
 <td>X</td>
 <td>X</td>
 </tr>
 <tr class="odd">
-<td>5</td>
+<td>Contig_5</td>
 <td>Y</td>
 <td>-</td>
 <td>N</td>
@@ -865,14 +859,24 @@ samtools index Sorted_BC01_BLOB.bam
 <div id="tabset-7-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-3-tab">
 <p>We will be generating blastn .tsv files for blobtools to use and we will discuss the result of the whole genome blast in the taxonomic classification section. We will be using the nt database downloaded via this command: update_blastdb.pl -d nt, which downloaded the nt database on 1/24/24</p>
 <pre><code>
-blastn \
-         -query /path/to/assembly.fasta \
-          -db ~/path/to/nt_database \
-           -outfmt '6 qseqid staxids bitscore std' \
-            -max_target_seqs 10 \
-             -max_hsps 1 \
-              -evalue 1e-25 \
-               -out BC01_OG_Blast_NCBI_nt.tsv
+#!/bin/bash
+#SBATCH --job-name=BC01_blast
+#SBATCH --nodes=1
+#SBATCH --ntasks=18
+#SBATCH --time=20:00:00
+#SBATCH --mem=100G
+
+#Variables
+export QUERY = /path/to/minimap2/06.fixstart.fasta
+export DATABASE = /path/to/minimap2/database/nt
+export OUT_FORMAT = '6 qseqid staxids bitscore std'
+export MAX_TARGET = 10
+export MAX_HSPS = 1
+export EVAL = 1e-25
+export OUTPUT = .tsv
+
+#Command
+blastn -query $QUERY -db $DATABASE -outfmt $OUT_FORMAT -max_target_seqs $MAX_TARGET -max_hsps $MAX_HSPS -evalue $EVAL -out $OUTPUT
 </code></pre>
 </div>
 </div>
@@ -1409,6 +1413,7 @@ gtdbtk classify_wf --genome_dir $ASSEMBLY -x fasta --cpus 16 --out_dir $OUT
 </section>
 <section id="blasting-individual-contigs" class="level3">
 <h3 class="anchored" data-anchor-id="blasting-individual-contigs">Blasting Individual Contigs</h3>
+<p><strong><em>DISCUSS WITH RAUL</em></strong> - Not Finished</p>
 <p>The aim of this section was to blast all of the non-chromosome sections and evaluate whether or not our contigs were plasmids or DNA pertaining to other Bacteria.</p>
 <section id="bc01-4" class="level4">
 <h4 class="anchored" data-anchor-id="bc01-4">BC01</h4>
@@ -1416,16 +1421,16 @@ gtdbtk classify_wf --genome_dir $ASSEMBLY -x fasta --cpus 16 --out_dir $OUT
 </section>
 <section id="bc02-4" class="level4">
 <h4 class="anchored" data-anchor-id="bc02-4">BC02</h4>
-<p>When blasting the contigs pertaining to BC02 we found the following accession numbers for contig two, four, and five: <strong><em>DISCUSS WITH RAUL</em></strong></p>
+<p>When blasting the contigs pertaining to BC02 we found the following accession numbers for contig two, four, and five:</p>
 </section>
 <section id="bc03-4" class="level4">
 <h4 class="anchored" data-anchor-id="bc03-4">BC03</h4>
+<p>When blasting the contigs pertaining to BC03 we found the following accession numbers for contig</p>
 </section>
 </section>
 </section>
 <section id="genome-annotation" class="level1">
 <h1>Genome Annotation</h1>
-<p>Prokka!!!</p>
 </section>
 
 </main>
